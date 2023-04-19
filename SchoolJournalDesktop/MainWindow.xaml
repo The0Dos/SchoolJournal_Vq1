@@ -1,0 +1,30 @@
+﻿<Window x:Class="SchoolJournalDesktop.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SchoolJournalDesktop"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+            <TextBlock FontSize="20" Text="Authorization" TextAlignment="Center" Margin="0 10"/>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                <TextBlock Margin="0 0 10 0" Text="Login"/>
+                <TextBox x:Name="tbLogin" Width="120"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0 10">
+                <TextBlock Margin="0 0 10 0" Text="Password"/>
+                <PasswordBox x:Name="tbPassword" Width="120"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0 0 0 10">
+                <RadioButton x:Name="rbDirector" IsChecked="True" Content="Директор" GroupName="Role" Margin="0 0 10 0"/>
+                <RadioButton x:Name="rbZav" Content="Завуч" GroupName="Role"/>
+            </StackPanel>
+            <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
+                <Button Content="Sign" Width="60" Margin="10 0" Click="clSign"/>
+                <Button Content="Exit" Width="60" Click="clExit"/>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>

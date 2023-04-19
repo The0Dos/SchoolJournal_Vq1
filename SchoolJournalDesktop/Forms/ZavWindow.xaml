@@ -1,0 +1,34 @@
+﻿<Window x:Class="SchoolJournalDesktop.Forms.ZavWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SchoolJournalDesktop.Forms"
+        mc:Ignorable="d"
+        Title="ZavWindow" Height="450" Width="800">
+    <Grid>
+        <StackPanel>
+            <StackPanel Margin="10" Orientation="Horizontal">
+                <TextBlock Margin="10 0" VerticalAlignment="Center" Text="Учебный год:"/>
+                <ComboBox DisplayMemberPath="BeginEnd" Width="100" x:Name="cbYear"/>
+                <TextBlock Margin="10 0" VerticalAlignment="Center" Text="Учебное полугодие:"/>
+                <ComboBox x:Name="cbPoluYear" Width="100"/>
+                <TextBlock Margin="10 0" VerticalAlignment="Center" Text="Класс:"/>
+                <ComboBox DisplayMemberPath="Name" x:Name="cbClass" Width="30" />
+                <Button Content="Применить" Click="clAccept" Margin="10 0"/>
+                <Button Content="Сбросить" Click="clBreak" Margin="10 0"/>
+            </StackPanel>
+            <DataGrid x:Name="dgStudents" IsReadOnly="True" AutoGenerateColumns="False">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="ФИО" Binding="{Binding FullName}"/>
+                    <DataGridTextColumn Header="Класс" Binding="{Binding CurrentClass}"/>
+                    <DataGridTextColumn Header="Адрес" Binding="{Binding Address}"/>
+                    <DataGridTextColumn Header="Телефон" Binding="{Binding ParentTelephone}"/>
+                </DataGrid.Columns>
+            </DataGrid>
+            <StackPanel Orientation="Horizontal" Margin="10 15">
+                <TextBlock x:Name="tbAvg" Text="Средняя успеваемость: "/>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>
